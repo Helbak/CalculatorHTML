@@ -23,8 +23,10 @@
     const dot = document.getElementById('dot');
     const reset = document.getElementById('reset');
     const equal = document.getElementById('equal');
+     const del = document.getElementById('del');
 
     reset.addEventListener('click', allNull, true);
+    del.addEventListener('click', ce, true);
     one.addEventListener('click', writeOne, true);
     two.addEventListener('click', writeTwo, true);
     three.addEventListener('click', writeThree, true);
@@ -122,7 +124,7 @@
 
     function saveOldNum() {
         dot.disabled = false;
-        oldNum = parseInt(num1);
+        oldNum = parseFloat(num1);
         num1 = '';
     };
 
@@ -142,6 +144,7 @@
         saveOldNum();
         toScreen('');
         action = doDivide;
+        return
     };
 
     function writeActionMulti() {
@@ -151,20 +154,20 @@
     };
 
     function doPlus() {
-        console.log('doPlus    ' + oldNum);
-        return oldNum + parseInt(num1);
+
+        return oldNum + parseFloat(num1);
     };
 
     function doMinus() {
-        return oldNum - parseInt(num1);
+        return oldNum - parseFloat(num1);
     };
 
     function doDivide() {
-        return oldNum / parseInt(num1);
+        return oldNum / parseFloat(num1);
     };
 
     function doMulti() {
-        return oldNum * parseInt(num1);
+        return oldNum * parseFloat(num1);
     };
 
     function getResult() {
@@ -185,6 +188,18 @@
     function toScreen(n) {
         inputFirst.value = n;
     };
+    function ce() {
+        // let indexLastNum = num1.length;
+       num1= num1.substring(0, num1.length - 1);
+       // if(num1!==null) {
+           toScreen(num1);
+       // }
+       // if(num1===null){
+       //     console.log(' function ce() {  ')
+       //     toScreen('0');
+       // }
+        return num1;
+    }
     // inputFirst.value = num;
 // }
 //

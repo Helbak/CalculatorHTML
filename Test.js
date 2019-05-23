@@ -111,5 +111,23 @@ describe(" test buttons", () => {
         const exp = '';
         assert.deepEqual(act, exp);
     });
-
+    it(`test ce`, function () {
+        writeOne();
+        writeTwo();
+        writeThree();
+        writeFour();
+        const act = ce();
+        const exp = '123';
+        assert.deepEqual(act, exp);
+    });
+    it(`test ce`, function () {
+        const act = ce();
+        const exp = '12';
+        assert.deepEqual(act, exp);
+    });
+    it(`test upgrade`, function () {
+        const act = allNull();
+        const exp = '';
+        assert.deepEqual(act, exp);
+    });
 });
